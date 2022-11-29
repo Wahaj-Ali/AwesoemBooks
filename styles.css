@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#book-section {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+}
+
+.books {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.books p {
+    margin: 10px;
+    padding: 10px;
+    width: 400px;
+    font-weight: 900;
+}
+
+.remmove-btn {
+    border: 2px solid black;
+    height: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    background-color: #e1deda;
+    box-shadow: 3px 2px #070202;
+}
+
+#add-book {
+    width: 40px;
+    position: relative;
+    left: 160px;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e1deda;
+    box-shadow: 3px 2px #070202;
+}
+
+hr {
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    margin-top: 20px;
+}
+
+input {
+    border: 3px solid black;
+}

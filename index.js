@@ -2,8 +2,7 @@ class Book {
     constructor(title, author) {
         this.title = title;
         this.author = author;
-        this.bookId = Math.random();
-        
+        this.bookId = Math.floor(Math.random() * 10);
     }
 }
 
@@ -40,16 +39,36 @@ function getBookData() {
 function showBook(bookObj) {
     const bookSection = document.getElementById('book-section');
     const newBook = document.createElement('div');
+
+    var divs = document.getElementsByTagName('div');
+    for (var i = 0; i < divs.length; i++) {
+        if (i % 2 === 0 ) {
+            divs[i].style.background = greyColor();
+        }
+        else {
+            divs[i].style.background = whiteColor();
+        }
+    }
+
+    newBook.setAttribute('class', "books");
     newBook.setAttribute('id', bookObj.bookId);
-    newBook.innerHTML = `<p>${bookObj.title}</p>
-                        <p>${bookObj.author}</p>`;
+    newBook.innerHTML = `<p>"${bookObj.title}" by ${bookObj.author}</p>`;
     const deleteBook = document.createElement('button');
-    deleteBook.innerHTML = 'Delete';
+    deleteBook.setAttribute('class', "remmove-btn")
+    deleteBook.innerHTML = 'Remove';
     deleteBook.addEventListener('click', () => Books.delBook(bookObj.bookId));
-    const hr = document.createElement('hr');
     newBook.appendChild(deleteBook);
-    newBook.appendChild(hr);
     bookSection.appendChild(newBook);
+}
+
+function greyColor() {
+    var color = '#d7d7d7de';
+    return color;
+}
+
+function whiteColor() {
+    var wColor = '#fff'
+    return wColor;
 }
 
 const addButton = document.getElementById('add-book');
