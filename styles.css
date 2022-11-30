@@ -60,3 +60,85 @@ hr {
 input {
     border: 3px solid black;
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid gray;
+    padding: 0 20px;
+    align-items: center;
+    font-size: large;
+}
+
+.logo {
+    margin: 0;
+    font-weight: 900;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 10px;
+    border-right: 2px solid gray;
+    padding: 4px 0;
+    padding-right: 10px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.contact-info p,
+.contact-info li {
+    text-align: start;
+}
+
+nav li:hover {
+    color: blue;
+}
+
+.contact {
+    border: none;
+}
+
+.form-container {
+    display: none;
+}
+
+#current-date {
+    font-size: small;
+    text-align: right;
+    font-weight: 600;
+}
+
+footer {
+    position: absolute;
+    border: 2px solid gray;
+    padding: 0 20px;
+    bottom: 2em;
+    width: 500px;
+    box-sizing: border-box;
+    text-align: start;
+}
+
+.contact-info {
+    display: none;
+    font-size: large;
+}
+
+.contact-info h1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.book-form h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.list-holder h1 {
+    display: flex;
+    justify-content: center;
+}

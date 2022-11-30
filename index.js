@@ -13,7 +13,7 @@ class awesomeBook {
 
   addBook(newBook) {
     this.BookDetail.push(newBook);
-    localStorage.setItem('Books', JSON.stringify(this.BookDetail));
+      localStorage.setItem('Books', JSON.stringify(this.BookDetail));
     showBook(newBook);
   }
 
@@ -39,7 +39,9 @@ function getBookData() {
 function showBook(bookObj) {
   const bookSection = document.getElementById('book-section');
   const newBook = document.createElement('div');
-  var divs = document.getElementsByTagName('div');
+  
+  // var divs = document.getElementsByTagName('div');
+  var divs = document.getElementsByClassName('books');
   for (var i = 0; i < divs.length; i++) {
     if (i % 2 === 0) {
       divs[i].style.background = greyColor();
@@ -73,14 +75,51 @@ const addButton = document.getElementById('add-book');
 addButton.addEventListener('click', () => {
   const newBook = getBookData();
   Books.addBook(newBook);
+
 });
 
 window.onload = () => {
+  
   Books.data = JSON.parse(localStorage.getItem('Books' || '[]'));
   if (Books.data === null) {
     Books.data = [];
     return;
   }
+    Books.data.forEach((newBook) => showBook(newBook));
+  };
 
-  Books.data.forEach((newBook) => showBook(newBook));
-};
+  const currentDate = new Date().toLocaleString();
+  document.getElementById('current-date').innerHTML = currentDate;
+
+  const bookList = document.querySelector('.list-holder');
+  const list = document.querySelector('.list');
+  const formContainer = document.querySelector('.form-container');
+  const addNewBtn = document.querySelector('.add');
+  const contactBtn = document.querySelector('.contact');
+  const contactInfo = document.querySelector('.contact-info');
+
+  list.addEventListener('click', () => {
+    bookList.style.display = 'block';
+    formContainer.style.display = 'none';
+    contactInfo.style.display = 'none';
+  });
+
+  window.addEventListener('load', () => {
+    bookList.style.display = 'block';
+    formContainer.style.display = 'none';
+    contactInfo.style.display = 'none';
+  });
+
+  addNewBtn.addEventListener('click', () => {
+    bookList.style.display = 'none';
+    formContainer.style.display = 'block';
+    contactInfo.style.display = 'none';
+  });
+
+
+contactBtn.addEventListener('click', () => {
+  bookList.style.display = 'none';
+  formContainer.style.display = 'none';
+  contactInfo.style.display = 'block';
+});
+  

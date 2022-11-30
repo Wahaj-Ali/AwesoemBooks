@@ -10,16 +10,62 @@
 </head>
 
 <body>
-    <h1>All awesome books</h1>
-    <div id="book-section"></div>
-    <hr>
-        <form action="#" class="book-form" method="post">
-            <h2 id="form-heading">Add a new book</h2>
-            <input type="text" id="book-title" placeholder="Title"><br>
-            <input type="text" id="book-author" placeholder="Author"><br>
-            <button id="add-book" type="button">Add</button>
-        </form>
-    
+    <div class="main-container">
+        <header>
+            <nav>
+              <p class="logo">AwesomeBook</p>
+              <ul>
+                <li class="list">List</li>
+                <li class="add">Add new</li>
+                <li class="contact">Contact</li>
+              </ul>
+            </nav>
+          </header>
+          <div id="current-date"></div>
+          <div class="list-holder">
+            <h1>All awesome books</h1>
+            <div id="book-section"></div>
+          </div>
+
+        <div class="form-container">
+            
+            <hr>
+            <form action="#" class="book-form" method="post" id="form">
+                <h2 id="form-heading">Add a new book</h2>
+                <input type="text" id="book-title" placeholder="Title"><br>
+                <input type="text" id="book-author" placeholder="Author"><br>
+                <button id="add-book" type="button">Add</button>
+            </form>
+        </div>
+
+        <section class="contact-info">
+            <h1>Contact Information</h1>
+            <p>Do you have any questions or just you want to say "Hello"?</p>
+            <p>You can reach out to us!</p>
+            <ul>
+              <li>Our Email </li>
+                <ul>
+                    <li>wahaj.ali96@yahoo.com</li>
+                    <li>mail@mail.com</li>
+                </ul>
+              <li>Our Phone Number</li>
+                <ul>
+                    <li>+251946236923</li>
+                    <li>+239237823278</li>
+                </ul>
+              <li>Our Adress</li>
+                <ul>
+                    <li>Rawalpindi, Punjab, Pakistan</li>
+                    <li>Dashen Mountain, Amhara, Ethiopia</li>
+                </ul>
+            </ul>
+          </section>
+
+          <footer>
+            <p>Copyright @2022 developed by <b>Habitamu</b> and <b>Wahaj</b>.</p>
+          </footer>
+
+    </div>
 
     <script src="index.js"></script>
 </body>
